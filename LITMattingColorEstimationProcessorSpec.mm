@@ -46,8 +46,8 @@ beforeEach(^{
 
   processor = [[LITMattingColorEstimationProcessor alloc] initWithDevice:device];
 
-  foreground = PNKTextureWithPropertiesOfMat(imageMat, device, MTLTextureUsageShaderWrite);
-  background = PNKTextureWithPropertiesOfMat(imageMat, device, MTLTextureUsageShaderWrite);
+  foreground = PNKTextureWithPropertiesOfMat(imageMat, device);
+  background = PNKTextureWithPropertiesOfMat(imageMat, device);
 });
 
 it(@"should calculate background and foreground images", ^{

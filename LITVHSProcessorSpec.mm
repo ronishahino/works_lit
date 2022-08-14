@@ -9,7 +9,7 @@ SpecBegin(LITVHSProcessor)
 
 it(@"should perform vhs effect", ^{
   auto device = nn(MTLCreateSystemDefaultDevice());
-  auto processor = [[LITVHSProcessor alloc] initWithDevice:mtb(device)
+  auto processor = [[LITVHSProcessor alloc] initWithDevice:device
                                                pixelFormat:MTLPixelFormatRGBA8Unorm];
 
   auto inputMat = LTLoadMat([self class], @"batia_640.jpg");
@@ -33,7 +33,7 @@ it(@"should perform vhs effect", ^{
 
 it(@"should perform sharpen effect", ^{
   auto device = nn(MTLCreateSystemDefaultDevice());
-  auto processor = [[LITVHSProcessor alloc] initWithDevice:mtb(device)
+  auto processor = [[LITVHSProcessor alloc] initWithDevice:device
                                                pixelFormat:MTLPixelFormatRGBA8Unorm];
 
   auto inputMat = LTLoadMat([self class], @"batia_640.jpg");
@@ -57,7 +57,7 @@ it(@"should perform sharpen effect", ^{
 
 it(@"should perform sharpen and vhs effect", ^{
   auto device = nn(MTLCreateSystemDefaultDevice());
-  auto processor = [[LITVHSProcessor alloc] initWithDevice:mtb(device)
+  auto processor = [[LITVHSProcessor alloc] initWithDevice:device
                                                pixelFormat:MTLPixelFormatRGBA8Unorm];
 
   auto inputMat = LTLoadMat([self class], @"batia_640.jpg");

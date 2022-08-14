@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 
 /// Initializes with \c device and \c pixelFormat as the format of the output textures.
-- (instancetype)initWithDevice:(MTBDevice *)device pixelFormat:(MTLPixelFormat)pixelFormat;
+- (instancetype)initWithDevice:(id<MTLDevice>)device pixelFormat:(MTLPixelFormat)pixelFormat;
 
 /// Encodes a VHS effect into the fragment of \c outputTexture defined by \c quad.
 /// @param commandBuffer command buffer to store the encoded command.

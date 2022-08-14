@@ -71,11 +71,11 @@ static const MTLTextureUsage kTextureUsage = MTLTextureUsageShaderRead | MTLText
 
 @implementation LITVHSProcessor
 
-- (instancetype)initWithDevice:(MTBDevice *)device pixelFormat:(MTLPixelFormat)pixelFormat {
+- (instancetype)initWithDevice:(id<MTLDevice>)device pixelFormat:(MTLPixelFormat)pixelFormat {
   if (self = [super init]) {
-    _device = device;
+    _device = mtb(device);
 
-    auto fragmentFunction = [[device lit_library]
+    auto fragmentFunction = [[self.device lit_library]
                              newFunctionWithName:@"vhsFragmentShader"];
     LTAssert(fragmentFunction, @"Failed to get fragment function vhsFragmentShader");
 
